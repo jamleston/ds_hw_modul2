@@ -6,12 +6,9 @@ def execute_query(sql: str) -> list:
         cur.execute(sql)
         return cur.fetchall()
 
-# not working
 sql = """
-SELECT fullname
-FROM tasks
-LEFT JOIN users ON users.id = tasks.user_id
-WHERE id NOT IN (1,2);
+INSERT INTO tasks (id,title,description,status_id,user_id)
+VALUES(5,'Budeee Powell','asdgfdffgdffg', 2, 2);
 """
 
 print(execute_query(sql))

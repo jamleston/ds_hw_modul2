@@ -6,12 +6,12 @@ def execute_query(sql: str) -> list:
         cur.execute(sql)
         return cur.fetchall()
 
-# not working
 sql = """
-SELECT fullname
+SELECT fullname, title
 FROM tasks
-LEFT JOIN users ON users.id = tasks.user_id
-WHERE id NOT IN (1,2);
+INNER JOIN users ON users.id = tasks.user_id 
+INNER JOIN status ON status.id = tasks.status_id 
+WHERE name = 'in progress';
 """
 
 print(execute_query(sql))
