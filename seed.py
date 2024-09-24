@@ -74,7 +74,7 @@ fake_names, fake_emails, fake_titles, fake_descriptions = [],[],[],[]
 
 fake_data = faker.Faker()
 
-for i in range(3):
+for i in range(8):
     fake_names.append(fake_data.name())
     fake_emails.append(fake_data.email())
     fake_titles.append(fake_data.company())
@@ -87,11 +87,15 @@ if __name__ == '__main__':
 # create a new user
         user1 = (1,fake_names[0], fake_emails[0])
         user1_id = create_user(conn, user1)
-        print(user1_id)
 
         user2 = (2,fake_names[2], fake_emails[2])
         user2_id = create_user(conn, user2)
-        print(user2_id)
+
+        user3 = (3,fake_names[3], fake_emails[3])
+        user3_id = create_user(conn, user3)
+
+        user4 = (4,fake_names[4], fake_emails[4])
+        user4_id = create_user(conn, user4)
 
 # create a new status
         status1 = (1,'done')
